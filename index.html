@@ -61,12 +61,11 @@
     .card h3 { margin: 14px 0 8px; font-size: 1.1rem; }
     .card p { color: var(--muted); font-size: .95rem; margin: 0; }
     .icon { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 13px; background: rgba(139,156,255,.12); color: var(--accent); font-size: 1.3rem; }
-    .project { display: grid; grid-template-columns: .8fr 1.2fr; gap: 24px; align-items: stretch; }
-    .project-preview { min-height: 245px; border-radius: 16px; padding: 18px; background: linear-gradient(145deg, #1c2b48, #111a2c); border: 1px solid var(--line); display: flex; flex-direction: column; justify-content: space-between; }
-    .mini-top { display: flex; gap: 6px; } .mini-top i { width: 7px; height: 7px; border-radius: 50%; background: #8393b4; }
-    .mini-window { border: 1px solid rgba(255,255,255,.14); border-radius: 10px; padding: 15px; background: rgba(5,10,20,.45); }
-    .mini-line { height: 7px; background: rgba(172,188,225,.25); border-radius: 8px; margin: 9px 0; }
-    .mini-line.short { width: 58%; } .mini-line.accent { width: 42%; background: var(--accent2); }
+    .project { display: block; }
+    .project-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-bottom: 28px; }
+    .project-gallery figure { margin: 0; min-width: 0; }
+    .project-gallery img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+    .project-gallery figcaption { color: var(--muted); font-size: .85rem; margin-top: 8px; }
     .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0; }
     .tag { border: 1px solid var(--line); border-radius: 99px; color: #c8d3ed; padding: 5px 10px; font-size: .78rem; }
     .text-link { color: var(--accent2); font-weight: 700; font-size: .92rem; }
@@ -81,7 +80,7 @@
       .hero { grid-template-columns: 1fr; padding: 70px 0 50px; gap: 35px; }
       .code-card { transform: none; }
       .grid { grid-template-columns: 1fr; }
-      .project { grid-template-columns: 1fr; }
+      .project-gallery { grid-template-columns: 1fr; }
       .contact { align-items: flex-start; flex-direction: column; }
       .navlinks { gap: 13px; font-size: .82rem; }
     }
@@ -162,18 +161,18 @@
       <div class="section-head">
         <div class="eyebrow">Selected work</div>
         <h2>Project spotlight</h2>
-        <p>A project example demonstrating website development and content-management functionality.</p>
+        <p>A look at the CONNECT-ED website and its newsroom content-management sign-in.</p>
       </div>
       <article class="card project">
-        <div class="project-preview" aria-hidden="true">
-          <div class="mini-top"><i></i><i></i><i></i></div>
-          <div class="mini-window">
-            <div class="mini-line short"></div>
-            <div class="mini-line"></div>
-            <div class="mini-line short"></div>
-            <div class="mini-line accent"></div>
-          </div>
-          <div class="tag" style="width:max-content">Project website + admin</div>
+        <div class="project-gallery">
+          <figure>
+            <img src="assets/images/connected-homepage.png" alt="CONNECT-ED project website homepage showing its resilience library and belonging compass" loading="lazy" />
+            <figcaption>CONNECT-ED project website</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/images/connected-newsroom-admin.png" alt="CONNECT-ED newsroom administrator sign-in page" loading="lazy" />
+            <figcaption>Newsroom content-management sign-in</figcaption>
+          </figure>
         </div>
         <div>
           <div class="eyebrow">Website & content management</div>
