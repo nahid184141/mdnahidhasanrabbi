@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Independent web developer building responsive websites, PHP and MySQL applications, and custom admin dashboards." />
+  <title>Md Nahid Hasan Rabbi - Web Developer</title>
+  <style>
+    :root {
+      --bg: #090d18;
+      --panel: #101727;
+      --panel2: #131d30;
+      --text: #f3f6ff;
+      --muted: #a5b0c7;
+      --line: rgba(190, 205, 235, .14);
+      --accent: #8b9cff;
+      --accent2: #66e4c2;
+      --radius: 20px;
+      --max: 1100px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background:
+        radial-gradient(ellipse at 80% 0%, rgba(91, 108, 255, .15), transparent 38%),
+        radial-gradient(ellipse at 0% 40%, rgba(42, 206, 177, .07), transparent 32%),
+        var(--bg);
+      color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--accent2); outline-offset: 4px; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: auto; }
+    header { padding: 24px 0; border-bottom: 1px solid var(--line); }
+    nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { font-weight: 800; letter-spacing: -.04em; font-size: 1.05rem; }
+    .brand span { color: var(--accent2); }
+    .navlinks { display: flex; gap: 24px; color: var(--muted); font-size: .92rem; }
+    .navlinks a:hover, .text-link:hover { color: var(--accent2); }
+    .hero { padding: 100px 0 82px; display: grid; grid-template-columns: 1.35fr .65fr; gap: 56px; align-items: center; }
+    .eyebrow { color: var(--accent2); text-transform: uppercase; letter-spacing: .16em; font-weight: 750; font-size: .75rem; }
+    h1 { font-size: clamp(2.8rem, 7vw, 5.3rem); line-height: 1.02; letter-spacing: -.065em; margin: 18px 0 24px; }
+    h1 .gradient { background: linear-gradient(100deg, #a7b3ff, #66e4c2); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .lead { color: var(--muted); font-size: 1.13rem; max-width: 650px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 12px 18px; border-radius: 12px; font-weight: 700; font-size: .92rem; border: 1px solid var(--line); transition: transform .2s, border-color .2s; }
+    .btn:hover { transform: translateY(-2px); border-color: var(--accent); }
+    .btn.primary { background: linear-gradient(110deg, #a5b0ff, #70e8cb); color: #09111c; border: 0; }
+    .code-card { border: 1px solid var(--line); background: rgba(16, 23, 39, .82); padding: 22px; border-radius: var(--radius); box-shadow: 0 25px 80px rgba(0,0,0,.2); transform: rotate(1.5deg); }
+    .dots { display: flex; gap: 7px; padding-bottom: 20px; border-bottom: 1px solid var(--line); margin-bottom: 18px; }
+    .dot { width: 9px; height: 9px; border-radius: 50%; background: #ff7385; }
+    .dot:nth-child(2) { background: #ffd166; } .dot:nth-child(3) { background: #66e4c2; }
+    pre { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; font: .88rem/1.9 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: #c8d3ed; }
+    .purple { color: #b6a5ff; } .green { color: #66e4c2; } .pink { color: #ff9fcb; }
+    section { padding: 70px 0; }
+    .section-head { margin-bottom: 28px; }
+    .section-head h2 { font-size: clamp(1.8rem, 4vw, 2.7rem); line-height: 1.1; letter-spacing: -.045em; margin: 8px 0 12px; }
+    .section-head p { color: var(--muted); max-width: 650px; margin: 0; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card { background: linear-gradient(145deg, rgba(19,29,48,.92), rgba(14,21,36,.92)); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+    .card h3 { margin: 14px 0 8px; font-size: 1.1rem; }
+    .card p { color: var(--muted); font-size: .95rem; margin: 0; }
+    .icon { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 13px; background: rgba(139,156,255,.12); color: var(--accent); font-size: 1.3rem; }
+    .project { display: grid; grid-template-columns: .8fr 1.2fr; gap: 24px; align-items: stretch; }
+    .project-preview { min-height: 245px; border-radius: 16px; padding: 18px; background: linear-gradient(145deg, #1c2b48, #111a2c); border: 1px solid var(--line); display: flex; flex-direction: column; justify-content: space-between; }
+    .mini-top { display: flex; gap: 6px; } .mini-top i { width: 7px; height: 7px; border-radius: 50%; background: #8393b4; }
+    .mini-window { border: 1px solid rgba(255,255,255,.14); border-radius: 10px; padding: 15px; background: rgba(5,10,20,.45); }
+    .mini-line { height: 7px; background: rgba(172,188,225,.25); border-radius: 8px; margin: 9px 0; }
+    .mini-line.short { width: 58%; } .mini-line.accent { width: 42%; background: var(--accent2); }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0; }
+    .tag { border: 1px solid var(--line); border-radius: 99px; color: #c8d3ed; padding: 5px 10px; font-size: .78rem; }
+    .text-link { color: var(--accent2); font-weight: 700; font-size: .92rem; }
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skill { background: rgba(139,156,255,.08); border: 1px solid var(--line); border-radius: 11px; padding: 10px 14px; color: #dbe3fa; }
+    .contact { background: linear-gradient(140deg, rgba(139,156,255,.12), rgba(102,228,194,.06)); border: 1px solid var(--line); border-radius: 24px; padding: clamp(24px, 5vw, 48px); display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .contact h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.1; letter-spacing: -.045em; margin: 8px 0 12px; }
+    .contact p { color: var(--muted); max-width: 600px; margin: 0; }
+    footer { padding: 28px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; padding: 70px 0 50px; gap: 35px; }
+      .code-card { transform: none; }
+      .grid { grid-template-columns: 1fr; }
+      .project { grid-template-columns: 1fr; }
+      .contact { align-items: flex-start; flex-direction: column; }
+      .navlinks { gap: 13px; font-size: .82rem; }
+    }
+    @media (max-width: 430px) {
+      .wrap { width: min(var(--max), calc(100% - 28px)); }
+      .navlinks a:nth-child(2) { display: none; }
+      .brand { font-size: .95rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav aria-label="Main navigation">
+        <a class="brand" href="#home">Md Nahid Hasan Rabbi<span>.</span></a>
+        <div class="navlinks">
+          <a href="#services">Services</a>
+          <a href="#work">Projects</a>
+          <a href="#about">Skills</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap hero" id="home">
+      <div>
+        <div class="eyebrow">Independent Web Developer</div>
+        <h1>I build useful<br><span class="gradient">web experiences.</span></h1>
+        <p class="lead">I create responsive websites, custom admin dashboards and database-driven web applications for businesses and organisations.</p>
+        <div class="actions">
+          <a class="btn primary" href="#work">Explore my work <span aria-hidden="true">↗</span></a>
+          <a class="btn" href="#contact">Contact me</a>
+        </div>
+      </div>
+      <div class="code-card" aria-label="Decorative code example">
+        <div class="dots"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
+        <pre><span class="purple">const</span> developer = {
+  name: <span class="green">"Md Nahid Hasan Rabbi"</span>,
+  focus: <span class="green">"Web Development"</span>,
+  stack: [
+    <span class="pink">"HTML & CSS"</span>,
+    <span class="pink">"JavaScript"</span>,
+    <span class="pink">"PHP & MySQL"</span>
+  ],
+  status: <span class="green">"Available for projects"</span>
+};</pre>
+      </div>
+    </section>
+
+    <section class="wrap" id="services">
+      <div class="section-head">
+        <div class="eyebrow">What I can help with</div>
+        <h2>Development that solves real problems.</h2>
+        <p>Practical, maintainable solutions designed around what your business or organisation needs.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="icon" aria-hidden="true">&lt;/&gt;</div>
+          <h3>Business Websites</h3>
+          <p>Responsive websites that explain your services clearly and help potential customers get in touch.</p>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">▤</div>
+          <h3>Custom Admin Panels</h3>
+          <p>Dashboard interfaces for managing news, pages, media and other website content.</p>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">⌁</div>
+          <h3>PHP & MySQL Features</h3>
+          <p>Database-backed features, forms, content management and improvements to existing websites.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap" id="work">
+      <div class="section-head">
+        <div class="eyebrow">Selected work</div>
+        <h2>Project spotlight</h2>
+        <p>A project example demonstrating website development and content-management functionality.</p>
+      </div>
+      <article class="card project">
+        <div class="project-preview" aria-hidden="true">
+          <div class="mini-top"><i></i><i></i><i></i></div>
+          <div class="mini-window">
+            <div class="mini-line short"></div>
+            <div class="mini-line"></div>
+            <div class="mini-line short"></div>
+            <div class="mini-line accent"></div>
+          </div>
+          <div class="tag" style="width:max-content">Project website + admin</div>
+        </div>
+        <div>
+          <div class="eyebrow">Website & content management</div>
+          <h3 style="font-size:1.5rem">CONNECT-ED Project</h3>
+          <p>I contributed to the CONNECT-ED project website and its administration interface. Visit the live project to see the website.</p>
+          <div class="tags">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">PHP</span><span class="tag">MySQL</span>
+          </div>
+          <div class="actions">
+            <a class="btn primary" href="https://connected-project.eu/" target="_blank" rel="noopener noreferrer">View live website ↗</a>
+            <a class="btn" href="https://github.com/nahid184141?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub profile ↗</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="wrap" id="about">
+      <div class="section-head">
+        <div class="eyebrow">Tools I work with</div>
+        <h2>My technical skills</h2>
+        <p>I work with these technologies to build responsive websites and database-driven applications.</p>
+      </div>
+      <div class="skills">
+        <span class="skill">HTML5</span><span class="skill">CSS3</span><span class="skill">JavaScript</span><span class="skill">PHP</span><span class="skill">MySQL</span><span class="skill">Responsive Design</span><span class="skill">Admin Dashboards</span><span class="skill">Database Integration</span><span class="skill">Git & GitHub</span>
+      </div>
+    </section>
+
+    <section class="wrap" id="contact">
+      <div class="contact">
+        <div>
+          <div class="eyebrow">Have a project in mind?</div>
+          <h2>Let's build something useful.</h2>
+          <p>I'm interested in working directly with businesses and organisations on website projects, custom features and ongoing improvements.</p>
+        </div>
+        
+        <a class="btn primary" href="mailto:nahrab100@gmail.com">Email me ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>&copy; <span id="year"></span> Md Nahid Hasan Rabbi. Independent Web Developer.</span>
+      <span>Built with HTML & CSS.</span>
+    </div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
+
